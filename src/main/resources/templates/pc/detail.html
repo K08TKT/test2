@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="~{layout/layout}">
+ <head>
+   <title>PC詳細</title>
+
+   <link rel="stylesheet" th:fref="@{css/pc/list.css}">
+ </head>
+ <body>
+   <div layout:fragment="content">
+     <div class="header bordr-bottom">
+       <h1 class="h2">PC詳細</h1>
+     </div>
+     <form id="pc-detail-form" method="post" th:action="@{/pc/detail}"
+      class="form-reg" th:object="${pcDetailForm}">
+
+      <input type="hidden" th:field="*{name}"/>
+
+       <table class="table table-striped table-bordered table-hover">
+         <tbody>
+          <tr>
+           <th class="w-25">PC名</th>
+           <td th:text="*{name}"></td>
+          </tr>
+          <tr>
+            <th>OS</th>
+            <td>
+              <input type="text" class="form-control" th:field="*{os}"/>
+            </td>
+            </tr>
+            <tr>
+              <th>CPU</th>
+               <td><input type="text" class="form-control" th:field="*{cpu}">
+               <input type="text" size="2" th:field="*{ghz}">Ghz
+               </td>
+               </tr>
+            <tr>
+              <th>グラフィックチップ</th>
+              <td><input type="text" class="form-control" th:field="*{gpu}">
+              </td>
+            <tr>
+              <th>メモリ</th>
+              <td><input type="text" size="2" th:field="*{ram}">GB
+              </td>
+            </tr>
+            <tr>
+              <th>HDD</th>
+              <td><input type="text" size="2"  th:field="*{hddCapa}"><input type="text" size="2" th:field="*{byt}">
+              </td>
+            </tr>
+            <tr>
+              <th>SSD</th>
+              <td><input type="text" size="2" th:field="*{ssdCapa}"><input type="text" size="2" th:field="*{byt2}">
+              </td>
+            </tr>
+            <tr>
+              <th>有線</th>
+              <td><input type="text" class="form-control" th:field="*{eth}">
+              </td>
+            </tr>
+            <tr>
+              <th>無線</th>
+              <td><input type="text" class="form-control" th:field="*{strWifi}">
+             </td>
+            </tr>
+            <tr>
+              <th>解像度</th>
+              <td><input type="text" class="form-control" th:field="*{resolution}"><input type="text" size="2" th:field="*{lcd}">
+              </td>
+            </tr>
+            <tr>
+              <th>メーカー</th>
+              <td><input type="text" class="form-control" th:field="*{manufacturers}">
+              </td>
+            </tr>
+            <tr>
+              <th>発売日</th>
+              <td><input type="text" class="form-control" th:field="*{release}">
+             </td>
+            </tr>
+            <tr>
+              <th>備考欄</th>
+              <td><textarea cols="22" rows="5" th:field="*{description}">
+              </textarea>
+              </td>
+            </tr>
+         </tbody>
+       </table>
+       <div class="text-center">
+
+         <button class="btn btn-danger" type="submit" name="delete">
+           削除
+         </button>
+
+         <button class="btn btn-primary" type="submit" name="update">
+          更新
+         </button>
+       </div>
+      </form>
+   </div>
+ </body>
+ </html>

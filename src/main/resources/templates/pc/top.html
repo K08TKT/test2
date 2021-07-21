@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <!-- Bootstrapの設定 -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- CSSの読み込み -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/top/top.css}">
+  <!-- JS読み込み -->
+  <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+
+  <title>トップページ</title>
+
+</head>
+<form method="post" th:action="@{/top}" class="form-top">
+
+<input type="submit" value="登録PC一覧" class="btn btn-primary"/>
+
+</form>
+
+
+<a class="form-btn" th:href="@{'/pc/form'}">PC情報登録はこちら</a>
+
+
+
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</html>

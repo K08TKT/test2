@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="~{layout/layout}">
+<head>
+  <title>登録PC一覧</title>
+
+  <link rel="stylesheet" th:href="@{/css/pc/list.css}">
+</head>
+<body>
+  <div layout:fragment="content">
+    <div class="header border-bottom">
+      <h1 class="h2">登録PC一覧画面</h1>
+</div>
+<div class="mb-4">
+  <form id="pc-search-form" method="post" th:action="@{/pc/list}"
+    class="form-inline" th:object="${pcListForm}">
+   <div class="form-group">
+     <label for="name" class="mr-2">PCモデル名</label>
+     <input type="text" class="form-control" th:field="*{name}"/>
+   </div>
+   <div class="form-group mx-sm-3">
+     <label for="os" class="mr-2">OS</label>
+     <input type="text" class="form-control" th:field="*{os}"/>
+   </div>
+   <button class="btn btn-primary" type="submit">
+     検索
+   </button>
+  </form>
+</div>
+   <div>
+   <table class="table table-striped table-bordered tablre-hobver">
+      <thead class="thead-light">
+        <tr>
+          <th class="th-width">PC名</th>
+          <th class="th-width">OS</th>
+          <th class="th-width">CPU</th>
+          <th class="th-width">Ghz</th>
+          <th class="th-width">グラフィックチップ</th>
+          <th class="th-width">メモリ</th>
+          <th class="th-width">HDD</th>
+          <th class="th-width">SSD</th>
+          <th class="th-width">有線</th>
+          <th class="th-width">無線</th>
+          <th class="th-width">解像度</th>
+          <th class="th-width">インチサイズ</th>
+          <th class="th-width">メーカー</th>
+          <th class="th-width">発売日</th>
+          <th class="th-width">備考欄</th>
+          <th></th>
+         </tr>
+      </thead>
+      <tbody>
+        <tr th:each="item:${pcList}">
+          <td th:text="${item.name}"></td>
+          <td th:text="${item.os}"></td>
+          <td th:text="${item.cpu}"></td>
+          <td th:text="${item.ghz}"></td>
+          <td th:text="${item.gpu}"></td>
+          <td th:text="${item.ram}"></td>
+          <td th:text="${item.hddCapa}"></td>
+          <td th:text="${item.ssdCapa}"></td>
+          <td th:text="${item.eth}"></td>
+          <td th:text="${item.strWifi}"></td><!--  <td >th:text="${item.byt}"</td> -->
+          <td th:text="${item.resolution}"></td>
+          <td th:text="${item.lcd}"></td>
+          <td th:text="${item.manufacturers}"></td>
+          <td th:text="${item.release}"></td>
+          <td th:text="${item.description}"></td>
+          <td>
+            <a class="btn btn-primary"th:href="@{'/pc/detail/'+${item.name}}">
+              詳細
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

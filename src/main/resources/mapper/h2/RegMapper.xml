@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.RegMapper" >
+
+<resultMap type="com.example.domain.pc.model.Reg" id="reg">
+  <id column="name" property="name"/>
+  <result column="os" property="os"/>
+  <result column="cpu" property="cpu"/>
+  <result column="ghz" property="ghz"/>
+  <result column="gpu" property="gpu"/>
+  <result column="ram" property="ram"/>
+  <result column="hddCapa" property="hddCapa"/>
+  <result column="byt" property="byt"/>
+  <result column="ssdCapa" property="ssdCapa"/>
+  <result column="byt2" property="byt2"/>
+  <result column="eth" property="eth"/>
+  <result column="strWifi" property="strWifi"/>
+  <result column="resolution" property="resolution"/>
+  <result column="lcd" property="lcd"/>
+  <result column="manufacturers" property="manufacturers"/>
+  <result column="release_date" property="release_date"/>
+  <result column="description" property="description"/>
+</resultMap>
+
+
+
+
+  <insert id="insertOne">
+    insert into m_pc(
+
+       name
+      ,os
+      ,cpu
+      ,ghz
+      ,gpu
+      ,ram
+      ,hddCapa
+      ,byt
+      ,ssdCapa
+      ,byt2
+      ,eth
+      ,strWifi
+      ,resolution
+      ,lcd
+      ,manufacturers
+      ,release
+      ,description
+    )
+    values(
+     #{name}
+      ,#{os}
+      ,#{cpu}
+      ,#{ghz}
+      ,#{gpu}
+      ,#{ram}
+      ,#{hddCapa}
+      ,#{byt}
+      ,#{ssdCapa}
+      ,#{byt2}
+      ,#{eth}
+      ,#{strWifi}
+      ,#{resolution}
+      ,#{lcd}
+      ,#{manufacturers}
+      ,#{release}
+      ,#{description}
+
+    )
+
+  </insert>
+  <select id="findMany" resultType="Reg">
+
+    select
+
+      *
+
+    from
+
+      m_pc
+
+  <where>
+
+    <if test="name !=null">
+      name like'%'||#{name}||'%'
+    </if>
+    <if test="os!=null">
+      and os like'%'||#{os}||'%'
+    </if>
+
+  </where>
+
+  </select>
+
+  <select id="findOne" resultMap="reg">
+
+    select
+
+      *
+
+    from
+
+      m_pc
+
+    where
+
+      name=#{name}
+  </select>
+
+  <update id="updateOne">
+
+    update
+
+      m_pc
+
+    set
+
+     name = #{name}
+     ,os = #{os}
+     ,cpu = #{cpu}
+     ,ghz = #{ghz}
+     ,gpu = #{gpu}
+     ,ram = #{ram}
+     ,hddCapa = #{hddCapa}
+     ,byt = #{byt}
+     ,ssdCapa = #{ssdCapa}
+     ,eth = #{eth}
+     ,strWifi = #{strWifi}
+     ,resolution =#{resolution}
+     ,lcd = #{lcd}
+     ,manufacturers = #{manufacturers}
+     ,release = #{release}
+     ,description = #{description}
+
+     where
+
+      name = #{name}
+  </update>
+
+  <delete id="deleteOne">
+
+    delete from
+
+      m_pc
+
+    where
+
+      name = #{name}
+  </delete>
+
+</mapper>
