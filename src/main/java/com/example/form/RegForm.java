@@ -40,11 +40,11 @@ public class RegForm {
 	private String manufacturers;  //メーカー
 
 
-	private String strWifi;
+	private String strWifi; //String型に変換したwifi
 
 
 
-	private String os;
+	private String os;  //String型に変換したos_radio
 
 
 	//private int version;
@@ -78,7 +78,7 @@ public class RegForm {
 	private Date release_date;  //発売日
 
 
-	private String release;
+	private String release;  //Stringに変換したrelease_date
 
 	//--------------------------
 	@NotNull
