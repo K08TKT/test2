@@ -1,7 +1,14 @@
 .form-top{
 	width: 100%;
-	max-width: 330px;
-	padding: 15px;
+	max-width:600px;
+	padding: 150px;
+	margin: auto;
+
+}
+.form-btn{
+		width: 100%;
+	max-width:600px;
+	padding:  50px 140px;
 	margin: auto;
 
 }
