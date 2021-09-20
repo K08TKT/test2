@@ -5,21 +5,21 @@ CREATE TABLE IF NOT EXISTS employee(
 );
 
 CREATE TABLE IF NOT EXISTS m_pc(
- name VARCHAR(50)
- ,os VARCHAR(50)
- ,cpu VARCHAR(50)
- ,ghz NUMERIC
- ,gpu VARCHAR(50)
+ name VARCHAR(45)
+ ,os VARCHAR(45)
+ ,cpu VARCHAR(45)
+ ,ghz DECIMAL(10.0)
+ ,gpu VARCHAR(45)
  ,ram INT
  ,hddCapa INT
- ,byt VARCHAR(50)
+ ,byt VARCHAR(45)
  ,ssdCapa INT
- ,byt2 VARCHAR(50)
- ,eth CHAR
- ,strWifi VARCHAR(50)
- ,resolution VARCHAR(50)
- ,lcd NUMERIC
- ,manufacturers VARCHAR(50)
- ,release VARCHAR(50)
+ ,byt2 VARCHAR(45)
+ ,eth CHAR(45)
+ ,strWifi VARCHAR(45)
+ ,resolution VARCHAR(45)
+ ,lcd DECIMAL(10.0)
+ ,manufacturers VARCHAR(45)
+ ,release VARCHAR(45)
  ,description VARCHAR(100)
 );

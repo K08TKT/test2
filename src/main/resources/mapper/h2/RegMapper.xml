@@ -28,6 +28,7 @@
 
 
   <insert id="insertOne">
+  <if test="name!=#{name}">
     insert into m_pc(
 
        name
@@ -66,11 +67,12 @@
       ,#{manufacturers}
       ,#{release}
       ,#{description}
-
     )
-
+    </if>
+<!-- 1件登録 -->
   </insert>
   <select id="findMany" resultType="Reg">
+
 
     select
 

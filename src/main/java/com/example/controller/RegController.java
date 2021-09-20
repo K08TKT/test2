@@ -96,6 +96,7 @@ public class RegController {
 
 		    model.addAttribute("RegForm", form);
 		    System.out.println(form);
+		    System.out.println();
 
 
 

@@ -94,7 +94,7 @@
            </td>
        </tr>
        <tr>
-         <td><label class="active" for="eth" th:text="#{wifi}"></label></td>
+         <td><label class="active" for="wifi" th:text="#{wifi}"></label></td>
            <td><label class="form-check form-check-inline" th:each="wf:${wifiMap}">
                <input type="checkbox" name="wifi" th:value="${#strings.toString(wf.key)}" th:text="${wf.value}"/>
 

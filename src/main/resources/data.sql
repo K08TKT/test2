@@ -1,4 +1,3 @@
-
 INSERT INTO m_pc(
 name
 ,os
@@ -17,8 +16,8 @@ name
 ,release
 ,manufacturers
 ,description
-)
-VALUES(
+);
+/*VALUES(
 'Inspiron 15 7000'
 ,'10-Home'
 ,'i5-7300HQ'
@@ -36,3 +35,21 @@ VALUES(
 ,'2021-07-06'
 ,'DELL'
 ,'-');
+VALUES(
+'Spectre x360 15-eb1000'
+,'10-Pro'
+,'i7-1165G7'
+,4.70
+,'Intel Iris Xe'
+,16
+,0
+,'-'
+,512
+,'GB'
+,'-'
+,'a,bgn,ac,ax'
+,'3840×2160'
+,15.6
+,'2021-07-06'
+,'HP'
+,'-');*/

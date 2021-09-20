@@ -81,7 +81,7 @@ public class RegForm {
 	private String release;  //Stringに変換したrelease_date
 
 	//--------------------------
-	@NotNull
+
 	private String eth;
 	public String getEth() {
 		return eth;
